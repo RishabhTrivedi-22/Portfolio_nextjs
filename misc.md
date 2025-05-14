@@ -1,0 +1,1 @@
+ flex justify-center items-center

@@ -3,6 +3,9 @@ import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import { SectionHeader } from "@/components/SectionHeader";
+import GrainImg from "@/assets/images/grain.jpg";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -38,5 +41,40 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+  return (
+    <section className="py-16">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Happy clients"
+          title="What Clients Say about Me"
+          description="Dont't just take my word for it. See what my clients have to say about my work."
+        />
+
+        <div>
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.name}
+              className="bg-gray-800 rounded-3xl z-0 overflow-hidden relative after:absolute after:inset-0 after:content-['']  after:outline after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 p-6 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none"
+            >
+              <div
+                className="absolute inset-0 -z-10 opacity-5"
+                style={{
+                  backgroundImage: `url(${GrainImg.src})`,
+                }}
+              ></div>
+
+              <Image
+                src={testimonial.avatar}
+                alt={testimonial.name}
+                className="size-4"
+              />
+              <div>{testimonial.name}</div>
+              <div>{testimonial.position}</div>
+              <p>{testimonial.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
