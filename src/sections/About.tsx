@@ -13,6 +13,7 @@ import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
+import { ToolBoxItem } from "@/components/ToolBoxItem";
 // import css from "styled-jsx/css";
 
 const toolBoxItems = [
@@ -45,30 +46,44 @@ const hobbies = [
   {
     title: "Gaming",
     emoji: "🎮",
+    left: "5%",
+    top: "3%",
   },
   {
     title: "Sketching",
     emoji: "✍🏽",
-  },
-  {
-    title: "Fitness",
-    emoji: "🏋🏻‍♂️",
+    left: "55%",
+    top: "5%",
   },
   {
     title: "Reading",
     emoji: "📚",
+    left: "30%",
+    top: "40%",
+  },
+  {
+    title: "Fitness",
+    emoji: "🏋🏻‍♂️",
+    left: "10%",
+    top: "30%",
   },
   {
     title: "Travel",
     emoji: "✈️",
+    left: "70%",
+    top: "45%",
   },
   {
     title: "Cooking",
     emoji: "🧑🏽‍🍳",
+    left: "5%",
+    top: "65%",
   },
   {
     title: "Movies",
     emoji: "📽️",
+    left: "45%",
+    top: "70%",
   },
 ];
 
@@ -81,7 +96,7 @@ export const AboutSection = () => {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me."
         />
-        <div className="mt-20">
+        <div className="mt-20 flex flex-col gap-8">
           <Card className="h-[320px]">
             <div className="flex flex-col">
               <div className="inline-flex items-center gap-2">
@@ -96,36 +111,48 @@ export const AboutSection = () => {
               <Image src={bookImage} alt="Book cover" />
             </div>
           </Card>
-          <Card>
+          <Card className="p-0">
             <CardHeader
               title="My ToolBox"
               description="Explore the technologies and tools I use to craft exceptional digital experiences"
+              className="px-6 pt-6"
             />
-            <div>
-              {toolBoxItems.map((item) => (
-                <div key={item.title}>
-                  <TechIcon component={item.iconType} />
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
+            <ToolBoxItem tool={toolBoxItems} className="mt-6" />
+            <ToolBoxItem 
+              tool={toolBoxItems} 
+              className="mt-6"
+              toolWrapperClassName="-translate-x-1/2"
+            />
           </Card>
-          <Card>
-            <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
-            <div>
+          <Card className="p-0 flex flex-col">
+            <CardHeader
+              title="Beyond the Code"
+              description="Explore my interests and hobbies beyond the digital realm."
+              className="px-6 py-6"
+            />
+            <div className="relative flex-1">
               {hobbies.map((hobby) => (
-                <div key={hobby.title}>
-                  <div>
-                    <span>{hobby.title}</span>
+                <div 
+                  key={hobby.title} 
+                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top,
+                  }}
+                >
+  
+                    <span className="font-medium text-gray-950">{hobby.title}</span>
                     <span>{hobby.emoji}</span>
-                  </div>
+                  
                 </div>
               ))}
             </div>
           </Card>
-          <Card>
-            <Image src={mapImage} alt="map" />
-            <Image src={smileMemoji} alt="memoji-smiling" />
+          <Card className="p-0 relative">
+            <Image src={mapImage} alt="map" className="w-full h-full object-cover object-left-top" />
+            <div className="absolute top-1/2 left-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:outline after:outline-2 after:inset-0 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+            <Image src={smileMemoji} alt="memoji-smiling" className="size-20 " />
+            </div>
           </Card>
         </div>
       </div>
