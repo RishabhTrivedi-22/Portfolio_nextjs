@@ -89,7 +89,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <section className="py-16 lg:py-28">
+    <section id="About" className="py-16 lg:py-28">
       <div className="container">
         <SectionHeader
           eyebrow="About me"

@@ -1,3 +1,4 @@
+"use client"
 import memeojiImg from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import GrainImg from "@/assets/images/grain.jpg";
@@ -8,48 +9,51 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-      <div
-        className="absolute inset-0 -z-20 opacity-5"
-        style={{
-          backgroundImage: `url(${GrainImg.src})`,
-        }}
-      ></div>
-      <div className="size-[620px] hero-ring"></div>
-      <div className="size-[820px] hero-ring"></div>
-      <div className="size-[1020px] hero-ring"></div>
-      <div className="size-[1220px] hero-ring"></div>
-      <HeroOrbit size={800} rotation={-72}>
-        <StarIcon className="size-28 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={550} rotation={20}>
-        <StarIcon className="size-12 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={590} rotation={98}>
-        <StarIcon className="size-8 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={430} rotation={-14}>
-        <SparckleIcon className="size-8 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={440} rotation={-79}>
-        <SparckleIcon className="size-5 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={530} rotation={178}>
-        <SparckleIcon className="size-10 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={710} rotation={144}>
-        <SparckleIcon className="size-14 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={720} rotation={85}>
-        <div className="size-3 bg-emerald-300/20 rounded-full" />
-      </HeroOrbit>
-      <HeroOrbit size={520} rotation={-41}>
-        <div className="size-2 bg-emerald-300/20 rounded-full" />
-      </HeroOrbit>
-      <HeroOrbit size={650} rotation={-5}>
-        <div className="size-2 bg-emerald-300/20 rounded-full" />
-      </HeroOrbit>
+    <div
+      id="Home"
+      className="py-32 md:py-48 lg:py-60 relative z-10 overflow-x-clip"
+    >
+      <div className="absolute -z-20 inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+        <div
+          className="absolute inset-0  opacity-5"
+          style={{
+            backgroundImage: `url(${GrainImg.src})`,
+          }}
+        ></div>
+        <div className="size-[620px] hero-ring"></div>
+        <div className="size-[820px] hero-ring"></div>
+        <div className="size-[1020px] hero-ring"></div>
+        <div className="size-[1220px] hero-ring"></div>
+        <HeroOrbit size={800} rotation={-72}>
+          <StarIcon className="size-28 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={550} rotation={20}>
+          <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={590} rotation={98}>
+          <StarIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={430} rotation={-14}>
+          <SparckleIcon className="size-8 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={440} rotation={-79}>
+          <SparckleIcon className="size-5 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={530} rotation={178}>
+          <SparckleIcon className="size-10 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={710} rotation={144}>
+          <SparckleIcon className="size-14 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={720} rotation={85}>
+          <div className="size-3 bg-emerald-300/20 rounded-full" />
+        </HeroOrbit>
+        <HeroOrbit size={520} rotation={-41}>
+          <div className="size-2 bg-emerald-300/20 rounded-full" />
+        </HeroOrbit>
+        <HeroOrbit size={650} rotation={-5}>
+          <div className="size-2 bg-emerald-300/20 rounded-full" />
+        </HeroOrbit>
       </div>
 
       <div className="container">
@@ -77,11 +81,17 @@ export const HeroSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 rounded-xl px-6 h-12">
+          <button
+            onClick={() => (window.location.href = "#Projects")}
+            className="inline-flex items-center gap-2 border border-white/15 rounded-xl px-6 h-12 cursor-pointer hover:bg-white/5 transition-colors"
+          >
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 bg-white text-gray-900 px-9 h-12 rounded-xl">
+          <button
+            onClick={() => (window.location.href = "#Contact")}
+            className="inline-flex items-center gap-2 bg-white text-gray-900 px-9 h-12 rounded-xl cursor-pointer hover:bg-gray-950 hover:text-white hover:border hover-border-white transition-colors duration-250"
+          >
             <span>👋</span>
             <span className="font-semibold">Let's Connect</span>
           </button>
