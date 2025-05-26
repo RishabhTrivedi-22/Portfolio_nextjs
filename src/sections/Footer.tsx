@@ -7,11 +7,11 @@ const footerLinks = [
   },
   {
     title: 'Twitter',
-    href: '#',
+    href: 'https://x.com/RishabhTri2210',
   },
   {
     title: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/rishabh-trivedi-a8990a1aa/',
   },
   
 ]
