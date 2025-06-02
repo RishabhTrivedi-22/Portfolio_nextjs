@@ -10,7 +10,7 @@ export const Card = ({
   return (
     <div
       className={twMerge(
-        "bg-gray-800 rounded-3xl z-0 overflow-hidden relative after:absolute after:inset-0 after:content-['']  after:outline after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none h-[320px]",
+        "bg-[#141218] rounded-3xl z-0 overflow-hidden relative after:absolute after:inset-0 after:content-['']  after:outline after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none h-[320px]",
         className
       )}
       {...other}

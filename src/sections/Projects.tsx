@@ -59,13 +59,13 @@ export const ProjectsSection = () => {
               key={project.title}
               className="pt-8 px-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 h-auto sticky"
               style={{
-                top: `calc(64px + ${projectIndex * 80}px)`
+                top: `calc(64px + ${projectIndex * 100}px)`
               }}
             >
 
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16"> 
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text  inline-flex gap-2 uppercase font-bold tracking-widest text-sm">
+                  <div className="bg-gradient-to-r from-[#FF0050] to-[#8A2BE2] text-transparent bg-clip-text  inline-flex gap-2 uppercase font-bold tracking-widest text-sm">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
